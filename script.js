@@ -1,17 +1,21 @@
 let button = document.getElementById('button');
 let delItem = document.getElementById('delete');
+let update = document.getElementById('edit');
 
 // it will post the data to the server at crudcrud.com
 button.onclick = () => {
     var Name = document.getElementById('name').value;
     var Email = document.getElementById('email').value;
     var Phone = document.getElementById('phone').value;
-    const post =axios.post("https://crudcrud.com/api/f8b96cbbe71244ee890a7f64e3658846/yavCallPage",{
-        Name,Email,Phone
-    }).then(location.reload());
+
+    const post =axios.post("https://crudcrud.com/api/2242caab88b3447c8d2e17f2b1def92c/yavCallPage",{
+            Name,Email,Phone
+    })
+    .then(location.reload());
 }
+
 // it will get the data from server crudcdud.com link is in the axios
-const get = axios.get("https://crudcrud.com/api/f8b96cbbe71244ee890a7f64e3658846/yavCallPage")
+const get = axios.get("https://crudcrud.com/api/2242caab88b3447c8d2e17f2b1def92c/yavCallPage")
     .then(data => {
         data.data.forEach(element => {
             document.getElementById('namO').innerHTML += `${element.Name}<br>`
@@ -32,8 +36,29 @@ const get = axios.get("https://crudcrud.com/api/f8b96cbbe71244ee890a7f64e3658846
         });
     })
 
-    // it will delete item by specific id attached at last
+// it will delete item by specific id attached at last
 delItem.onclick = (e) => {
-  axios.delete(`https://crudcrud.com/api/f8b96cbbe71244ee890a7f64e3658846/yavCallPage/${e.target.id}`)
+  axios.delete(`https://crudcrud.com/api/2242caab88b3447c8d2e17f2b1def92c/yavCallPage/${e.target.id}`)
   .then(location.reload());
+}
+
+// it will add or update the existing element
+let z=0;
+update.onclick = (e) => {
+    axios.get(`https://crudcrud.com/api/2242caab88b3447c8d2e17f2b1def92c/yavCallPage/${e.target.id}`)
+    .then(data => {
+        document.getElementById('name').value = data.data.Name;
+        document.getElementById('email').value = data.data.Email;
+        document.getElementById('phone').value = data.data.Phone;
+    })
+    .then( 
+        button.onclick = () => {
+        var Name = document.getElementById('name').value;
+        var Email = document.getElementById('email').value;
+        var Phone = document.getElementById('phone').value;
+
+        axios.put(`https://crudcrud.com/api/2242caab88b3447c8d2e17f2b1def92c/yavCallPage/${e.target.id}`,{
+            Name,Email,Phone
+        })
+    })   
 }
