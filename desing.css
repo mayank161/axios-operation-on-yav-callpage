@@ -1,0 +1,41 @@
+
+.container {
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/Website-Design-Background.webp);
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    position: relative;
+}
+.navbar {
+    height: 15vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+.form {
+    height: 50px;
+    width: 50%;
+    position: relative;
+    text-align: center;
+    color: lime;
+}
+body > table{
+    width: 80%;
+}
+
+table{
+    border-collapse: collapse;
+}
+table.list{
+    margin-left: 50%;
+    width:35%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: chartreuse;
+}

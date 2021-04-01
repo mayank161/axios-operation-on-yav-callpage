@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKING PAGE</title>
+    <link rel="stylesheet" href="desing.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="images/logo - Copy.png">
+            <ul style="margin-left: 35%;"><button type="menu" style="height: 80%;width: 200%;color: lime; background-color: lightslategray;">HOME</button></ul>
+            <ul style="margin-left: 20%;"><button style="color: lime; background-color: lightslategray;">SCHEDULE A CALL</button> <button style="color: lime; background-color: lightslategray;">HIRE WITH US</button></ul>
+        </div>
+
+        <div class="form">
+            <p style="font-size: 5ch;">BOOK A CALL</p>
+            <p>Book a call slot and our representative will call you within 1hr of selected time.</p>
+            Name : <input type="text" name="name" id="name" >
+            <br><br>
+            Email : <input type="email" name="name" id="email" >
+            <br><br>
+            Phone : <input type="number" name="name" id="phone">
+            <br>
+            <p style="text-align: center;"> Time for call</p>
+            <input type="date" name="date" id="date"> <input type="time" name="time" id="time">
+            <br><br><br>
+            <button id="button" style="background-color :lightslategray; height: 100%;width: 20%;"> <p style="color: lime;">BOOK A CALL</p></button>
+        </div>
+        
+        <div>
+            <h1 style="margin-left: 50%;">USER DETAILS</h1>
+            
+            <table class="list" >
+                <thead>
+                    <tr id="add">
+                        <th>NAME </th>
+                        <th>email</th>
+                        <th>phone</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th id="namO"></th>
+                        <th id="emailO"></th>
+                        <th id="phonO"></th>
+                        <th id="edit"></th>
+                        <th id="delete"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+            <script src="script.js"></script>
+            <script src="delete.js"></script>
+        </div>
+    </div>
+</body>
+</html>
